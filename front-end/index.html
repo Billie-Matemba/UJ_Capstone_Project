@@ -38,33 +38,45 @@
             <div>
                 <!-- <h2>Biogas Inputs</h2> -->
                 <form @submit.prevent="submitForm">
-                  <h2><label for="digester">Type of Digester:</label></h2>  
+                  <!-- <label for="digester">Type of Digester:</label>  -->
                     <div class="digester-options">
 
                        <div class="digester-item">
-                        <img src="Covered_lagoon.jpg" alt="Covered Lagoon" @click="selectDigester('Covered Lagoon')" :class="{'selected': digester === 'Covered Lagoon'}">
+                        <img src="Covered_lagoon.jpg" alt="Covered Lagoon" @click="selectDigester('Covered Lagoon')" :class="{'selected': selectedDigester === 'Covered Lagoon'}">
                         <p>Covered Lagoon</p>
+                        <template x-if="selectedDigester === 'Covered Lagoon'">
+                            <p class="description">The Covered Lagoon digester is a simple, low-cost method that captures methane from waste material by trapping the gas under a covered lagoon.</p>
+                        </template>
                     </div>
 
                         <div class="digester-item">
-                            <img src="complete_mix.jpg" alt="Complete Mix" @click="selectDigester('Complete Mix')" :class="{'selected': digester === 'Complete Mix'}">
+                            <img src="complete_mix.jpg" alt="Complete Mix" @click="selectDigester('Complete Mix')" :class="{'selected': selectedDigester === 'Complete Mix'}">
                             <p>Complete Mix</p>
+                            <template x-if="selectedDigester === 'Complete Mix'">
+                                <p class="description">Complete Mix digesters are fully enclosed systems that use mechanical mixing to ensure that organic material is evenly distributed for maximum gas production.</p>
+                            </template>
                         </div>
 
                         <div class="digester-item">
-                            <img src="mixed_plug_flow.jpg" alt="Mixed Plug Flow" @click="selectDigester('Mixed Plug Flow')" :class="{'selected': digester === 'Mixed Plug Flow'}">
+                            <img src="mixed_plug_flow.jpg" alt="Mixed Plug Flow" @click="selectDigester('Mixed Plug Flow')" :class="{'selected': selectedDigester === 'Mixed Plug Flow'}">
                             <p>Mixed Plug Flow</p>
+                            <template x-if="selectedDigester === 'Mixed Plug Flow'">
+                                <p class="description">The Mixed Plug Flow digester moves waste through the system in a plug-like motion, creating efficient gas production from high-solids waste.</p>
+                            </template>
                         </div>
 
                         <div class="digester-item">
-                            <img src="Plugflow_digester1.jpg" alt="Horizontal Plug Flow" @click="selectDigester('Horizontal Plug Flow')" :class="{'selected': digester === 'Horizontal Plug Flow'}">
+                            <img src="Plugflow_digester1.jpg" alt="Horizontal Plug Flow" @click="selectDigester('Horizontal Plug Flow')" :class="{'selected': selectedDigester === 'Horizontal Plug Flow'}">
                             <p>Horizontal Plug Flow</p>
+                            <template x-if="selectedDigester === 'Horizontal Plug Flow'">
+                                <p class="description">The Horizontal Plug Flow digester is designed to handle higher solid waste content and uses a horizontal flow for processing the waste material.</p>
+                            </template>
                         </div>
                         
                     </div>
                     <br><br>
 
-                   <h2><label for="wasteVolume">Volume of Waste (kg):</label></h2> 
+                   <label for="wasteVolume">Volume of Waste (kg):</label>
                     <input type="number" id="wasteVolume" x-model="wasteVolume" placeholder="Enter waste in kg" step="0.01">
                     <br><br>
 

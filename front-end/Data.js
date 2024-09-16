@@ -3,10 +3,11 @@ document.addEventListener("alpine:init", () => {
         // showTerms: true,
         // showBiogasInputs: false,
         // canContinue: false,
-        digester: '',
+        selectedDigester: '',
         wasteVolume: null,
         showMessage: false,
-        predictionResult: null, // For storing the prediction result
+        predictionResult: null,
+        // selectedDigester: null,
 
         // Accept the terms
         // agree() {
@@ -22,17 +23,22 @@ document.addEventListener("alpine:init", () => {
         //     alert('You must agree to the terms to continue.');
         // },
 
-        selectDigester(digesterType) {
-            this.digester = digesterType;
+        selectDigester(digester) {
+            this.selectedDigester = digester;
+            this.showMessage = false;  // Reset message when digester is selected
         },
 
         // Submit the biogas form and send data to the API
         submitForm() {
-            if (this.digester && this.wasteVolume) {
+            if (this.selectedDigester && this.wasteVolume) {
                 // Call the API to get the biogas prediction
                 axios.post('http://127.0.0.1:5000/api/ml/predict', {
-                    digester_type: this.digester,  // Send the string value of digester
+                    digester_type: this.selectedDigester,
                     total_waste: this.wasteVolume
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
                 })
                 .then(response => {
                     this.showMessage = true;

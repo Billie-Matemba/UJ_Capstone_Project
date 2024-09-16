@@ -183,3 +183,10 @@ select:focus, input:focus {
     font-size: 1em;
     color: #333;
 }
+
+.digester-item .description {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
