@@ -1,0 +1,7 @@
+POST http://127.0.0.1:5000/api/ml/predict HTTP/1.1
+content-type: application/json
+
+{
+    "digester_type": "Covered Lagoon",
+    "total_waste": 100.00
+}
