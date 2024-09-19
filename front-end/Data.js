@@ -7,6 +7,7 @@ document.addEventListener("alpine:init", () => {
         wasteVolume: null,
         showMessage: false,
         predictionResult: null,
+        selectedTable:'',
         // selectedDigester: null,
 
         // Accept the terms
@@ -21,11 +22,18 @@ document.addEventListener("alpine:init", () => {
         // disagree() {
         //     this.canContinue = false;
         //     alert('You must agree to the terms to continue.');
+
         // },
+
+        
 
         selectDigester(digester) {
             this.selectedDigester = digester;
             this.showMessage = false;  // Reset message when digester is selected
+        },
+
+        selectTable(table){
+            this.selectedTable=table;
         },
 
         // Submit the biogas form and send data to the API

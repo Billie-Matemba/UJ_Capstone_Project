@@ -85,6 +85,7 @@
         <!-- Biogas Inputs Form -->
         <!-- <template x-if="showBiogasInputs"> -->
             <div>
+<<<<<<< HEAD
 
             </div>
 
@@ -92,15 +93,90 @@
 
             <div>
                 <!-- <h2>Biogas Inputs</h2> -->
+=======
+                <!--features table-->
+                <body x-data="{ showTable: false }">
+
+                    
+                    <a href="#" @click.prevent="showTable = !showTable">
+                        <img src="table.jpeg" width="80px" alt="Comparison table" @click="selectTable" :class="{'selected': selectedTable === 'table'}" >
+                        
+                    </a>
+                
+                    <div x-show="showTable" x-transition>
+                        <table>
+                            <thead>
+                                <tr class="text_1">
+                                    <th >Features</th>
+                                    <th>Covered Lagoon</th>
+                                    <th>Mixed Plug Flow</th>
+                                    <th>Horizontal Plug Flow</th>
+                                    <th>Complete mix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text_1"><b>Continuous or Batch</b></td>
+                                    <td class="text_2">Continuous</td>
+                                    <td class="text_3">Both</td>
+                                    <td class="text_2">Continuous</td>
+                                    <td class="text_3">Continuous</td>
+                                </tr>
+                                
+                                <tr>
+                                   <td class="text_1"> <b>Retention Time (days)</b></td>
+                                    <td class="text_3">15-30</td>
+                                    <td class="text_2">15-20</td>
+                                    <td class="text_3">15-20</td>
+                                    <td class="text_2">20-30</td>
+                                </tr>
+                                <tr>
+                                    <td class="text_1"><b>Operating Temperature(°C)</b></td>
+                                    <td class="text_2">Thermophilic (50-65)</td>
+                                    <td class="text_3">Mesophilic (25-40)</td>
+                                    <td class="text_2">Mesophilic(30-40)</td>
+                                    <td class="text_3">Mesophilic(30-40)</td>
+                                </tr>
+                                <tr>
+                                    
+                                <tr>
+                                    <td class="text_1"> <b>Maintenance Cost</b> </td>
+                                    <td class="text_3">Low: low costs to build and operate.</td>
+                                    <td class="text_2">High: due to need for specialized equipment and control systems.</td>
+                                    <td class="text_3">Moderate: regular maintenance required for long-term performance.</td>
+                                    <td class="text_2">Moderate: regular maintenance required for long-term performance.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="text_1"><b>Energy Efficiency</b></td>
+                                    <td class="text_2">Moderate to Low</td>
+                                    <td class="text_3">High</td>
+                                    <td class="text_2">High</td>
+                                    <td class="text_3">Moderate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                <h2>Biogas Inputs</h2> 
+>>>>>>> 5c3b8616167603579758c0488116ab69ee46b64b
                 <form @submit.prevent="submitForm">
-                  <!-- <label for="digester">Type of Digester:</label>  -->
+                    <div>
+                  <h3><label for="digester"><b>Type of Digester:</b></label></h3>
+                  <p class="input"><i>Please select your desired digester type</i></p>
+                </div>
                     <div class="digester-options">
 
                        <div class="digester-item">
                         <img src="Covered_lagoon.jpg" alt="Covered Lagoon" @click="selectDigester('Covered Lagoon')" :class="{'selected': selectedDigester === 'Covered Lagoon'}">
                         <p>Covered Lagoon</p>
                         <template x-if="selectedDigester === 'Covered Lagoon'">
+                            <div>
                             <p class="description">The Covered Lagoon digester is a simple, low-cost method that captures methane from waste material by trapping the gas under a covered lagoon.</p>
+                                <p class="adv"><i>Advantage:</i> Low cost to build and operate.</p>
+                               <p class="disadv"><i> Disadvantage:</i> Seasonal changes have an impact on the amount of biogas produced.</p>
+        
+                        </div>
                         </template>
                     </div>
 
@@ -108,7 +184,12 @@
                             <img src="complete_mix.jpg" alt="Complete Mix" @click="selectDigester('Complete Mix')" :class="{'selected': selectedDigester === 'Complete Mix'}">
                             <p>Complete Mix</p>
                             <template x-if="selectedDigester === 'Complete Mix'">
+                                <div>
                                 <p class="description">Complete Mix digesters are fully enclosed systems that use mechanical mixing to ensure that organic material is evenly distributed for maximum gas production.</p>
+                                    <p class="adv"><i>Advantage:</i> Suitable for large-scale operations, such as agricultural activities.</p>
+                                    <p class="disadv"><i>Disadvantage:</i> Continuous mixing consumes a large amount of energy.</p>
+                                
+                            </div>
                             </template>
                         </div>
 
@@ -116,7 +197,11 @@
                             <img src="mixed_plug_flow.jpg" alt="Mixed Plug Flow" @click="selectDigester('Mixed Plug Flow')" :class="{'selected': selectedDigester === 'Mixed Plug Flow'}">
                             <p>Mixed Plug Flow</p>
                             <template x-if="selectedDigester === 'Mixed Plug Flow'">
+                                <div>
                                 <p class="description">The Mixed Plug Flow digester moves waste through the system in a plug-like motion, creating efficient gas production from high-solids waste.</p>
+                                    <p class="adv"><i>Advantage:</i> Lower water requirement and high tolerance to impurities and inhibitors.</p>
+                                    <p class="disadv"><i>Disadvantage:</i> More complex to design and operate compared to simple plug flow and complete mix digesters.</p>
+                               </div>
                             </template>
                         </div>
 
@@ -124,20 +209,27 @@
                             <img src="Plugflow_digester1.jpg" alt="Horizontal Plug Flow" @click="selectDigester('Horizontal Plug Flow')" :class="{'selected': selectedDigester === 'Horizontal Plug Flow'}">
                             <p>Horizontal Plug Flow</p>
                             <template x-if="selectedDigester === 'Horizontal Plug Flow'">
-                                <p class="description">The Horizontal Plug Flow digester is designed to handle higher solid waste content and uses a horizontal flow for processing the waste material.</p>
+                                <div>
+                                    <p class="description">The Horizontal Plug Flow digester is designed to handle higher solid waste content and uses a horizontal flow for processing the waste material.</p>
+                                    <p class="adv"><i>Advantage:</i> Horizontal design ensures constant anaerobic digestion process thus optimising biogas output.</p>
+                                    <p class="disadv"><i>Disadvantage:</i> Minimal mixing may inhibit uniform digestion and biogas output.</p>
+                                </div>
                             </template>
                         </div>
                         
                     </div>
                     <br><br>
 
-                   <label for="wasteVolume">Volume of Waste (kg):</label>
-                    <input type="number" id="wasteVolume" x-model="wasteVolume" placeholder="Enter waste in kg" step="0.01">
+                   <h3><b><label for="wasteVolume">Volume of Waste (kg):</label></b></h3>
+                   <p class="input"><i>Please enter your volume of waste</i></p>
+                    <input type="number" id="wasteVolume" x-model="wasteVolume" placeholder="Waste in kg" step="0.01">
+                   
                     <br><br>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="button">Submit</button>
                 </form>
-
+                 
+                
                 <template x-if="showMessage">
                     <!-- <p>Thank you for submitting your biogas inputs!</p> -->
                     <p>Predicted Biogas Output: <strong x-text="predictionResult"></strong> cubic meters</p>
