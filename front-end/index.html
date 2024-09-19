@@ -11,6 +11,55 @@
     <script src="Data.js"></script>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>About Us</h1>
+        </div>
+    </header>
+
+    <section class="about-content">
+        <div class="container">
+            <h2>GreenEnergy</h2>
+            <p>
+                Founded in 2024,we aim to contribute in solving the waste management and energy problem faced by many cattle farmers. 
+                As the four founders we bring a wealth of different experiences and conributions. We plan on making a small difference in the world.
+            </p>
+
+            <p>
+                At GreenEnergy, we are passionate about providing innovative solutions for biogas
+                production. Our mission is to ensure a sustainable future by leveraging technology to promote
+                renewable energy sources. Whether you are a small-scale farmer or a large industry, we provide
+                tools that help you optimize biogas production and reduce waste.
+            </p>
+
+            <h3>Our Values</h3>
+            <ul>
+                <li><strong>Innovation:</strong> Use of cutting-edge technology to leave the world a better place.</li>
+                <li><strong>Sustainability:</strong> Focus on creating a cleaner and greener planet.</li>
+                <li><strong>Excellence:</strong> Delivering the best services to our customers.</li>
+            </ul>
+            <h5>Our app specializes in 4 of the most common biogas digesters:</h5>
+        <ul>
+            <li><strong>Covered Lagoon:</strong> A simple, cost-effective option for large-scale liquid waste treatment.</li>
+            <li><strong>Mixed Plug Flow:</strong> Combines plug flow with mixing, ideal for solid-rich waste.</li>
+            <li><strong>Horizontal Plug Flow:</strong> Efficient for high solid content waste like manure, using a simple, long, horizontal tank.</li>
+            <li><strong>Complete Mix:</strong> Provides uniform digestion by continuously mixing waste inside a tank.</li>
+        </ul>
+
+            <h3>Contact Us</h3>
+            <p>If you have any questions or would like more information about our services, feel free to contact us at:</p>
+            <p>Email: <a href="GreenEnergy.com">info@GreenEnergy.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 GreenEnergy. All rights reserved.</p>
+            <a href="index.html">Back to Home</a> |
+            <a href="terms.html">Terms and Conditions</a>
+        </div>
+    </footer>
+
     <div class="container" x-data="app()">
         <!-- Terms and Conditions Section -->
         <!-- <template x-if="showTerms">
@@ -35,6 +84,12 @@
 
         <!-- Biogas Inputs Form -->
         <!-- <template x-if="showBiogasInputs"> -->
+            <div>
+
+            </div>
+
+
+
             <div>
                 <!-- <h2>Biogas Inputs</h2> -->
                 <form @submit.prevent="submitForm">
