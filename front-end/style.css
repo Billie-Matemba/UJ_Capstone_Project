@@ -110,7 +110,7 @@ p {
 
 /* Input fields */
 select, input {
-    width: 100%;
+    width: 80%;
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #ddd;
@@ -124,6 +124,8 @@ select:focus, input:focus {
     border-color: #2c7a7b; /* Highlight border on focus */
     box-shadow: 0 0 10px rgba(44, 122, 123, 0.2);
 }
+
+
 
 /* Responsive styling */
 @media (max-width: 768px) {
