@@ -262,3 +262,82 @@ th:hover, td:hover {
 .hidden {
     display: none; /* Class to hide sections */
 }
+
+/*style for recommended page/*
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+header {
+    background-color:#1abc9c;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 3px solid #16a085;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+/* Video Section */
+.video-section {
+    background-color: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the videos */
+    gap: 20px; /* Space between cards */
+}
+
+.video-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 1 calc(50% - 20px); /* Two videos per row with gap */
+    max-width: 300px; /* Optional max-width */
+}
+
+.video-card p {
+    margin: 5px 0;
+    color: #2c3e50;
+}
+
+/* Articles & Links Section */
+.articles-section, .links-section {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.article-card, .links-section ul {
+    margin: 10px auto;
+    max-width: 320px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.links-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #1abc9c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+

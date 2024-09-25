@@ -3,6 +3,11 @@ from flask_cors import CORS
 from tensorflow.keras.models import load_model
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
+import sys
+import io
+
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
+
 
 app = Flask(__name__)
 CORS(app)  
