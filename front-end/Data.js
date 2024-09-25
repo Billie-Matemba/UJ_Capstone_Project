@@ -1,42 +1,19 @@
 document.addEventListener("alpine:init", () => {
     Alpine.data('app', () => ({
-        // showTerms: true,
-        // showBiogasInputs: false,
-        // canContinue: false,
         selectedDigester: '',
         wasteVolume: null,
         showMessage: false,
         predictionResult: null,
-        selectedTable:'',
-        // selectedDigester: null,
+        showTable: false, // Property for showing the comparison table
 
-        // Accept the terms
-        // agree() {
-        //     this.canContinue = true;
-        //     this.showTerms = false; // Hide terms and show biogas input form
-        //     this.showBiogasInputs = true;
-        //     alert('Thank you for accepting the terms.');
-        // },
-
-        // // Decline the terms
-        // disagree() {
-        //     this.canContinue = false;
-        //     alert('You must agree to the terms to continue.');
-
-        // },
-
-        
-
+        // Select a digester and reset the table view
         selectDigester(digester) {
             this.selectedDigester = digester;
-            this.showMessage = false;  // Reset message when digester is selected
+            this.showMessage = false; // Reset message when digester is selected
+            this.showTable = false;   // Reset the table view when a new digester is selected
         },
 
-        selectTable(table){
-            this.selectedTable=table;
-        },
-
-        // Submit the biogas form and send data to the API
+        // Function to handle form submission
         submitForm() {
             if (this.selectedDigester && this.wasteVolume) {
                 // Call the API to get the biogas prediction

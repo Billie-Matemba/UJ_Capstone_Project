@@ -11,55 +11,12 @@
     <script src="Data.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>About Us</h1>
-        </div>
-    </header>
+    <div class="header">
+        <!-- <a href="index.html">Home</a> -->
+        <a href="about.html">About</a>
+        <a href="reco.html">More info</a>
 
-    <section class="about-content">
-        <div class="container">
-            <h2>GreenEnergy</h2>
-            <p>
-                Founded in 2024,we aim to contribute in solving the waste management and energy problem faced by many cattle farmers. 
-                As the four founders we bring a wealth of different experiences and conributions. We plan on making a small difference in the world.
-            </p>
-
-            <p>
-                At GreenEnergy, we are passionate about providing innovative solutions for biogas
-                production. Our mission is to ensure a sustainable future by leveraging technology to promote
-                renewable energy sources. Whether you are a small-scale farmer or a large industry, we provide
-                tools that help you optimize biogas production and reduce waste.
-            </p>
-
-            <h3>Our Values</h3>
-            <ul>
-                <li><strong>Innovation:</strong> Use of cutting-edge technology to leave the world a better place.</li>
-                <li><strong>Sustainability:</strong> Focus on creating a cleaner and greener planet.</li>
-                <li><strong>Excellence:</strong> Delivering the best services to our customers.</li>
-            </ul>
-            <h5>Our app specializes in 4 of the most common biogas digesters:</h5>
-        <ul>
-            <li><strong>Covered Lagoon:</strong> A simple, cost-effective option for large-scale liquid waste treatment.</li>
-            <li><strong>Mixed Plug Flow:</strong> Combines plug flow with mixing, ideal for solid-rich waste.</li>
-            <li><strong>Horizontal Plug Flow:</strong> Efficient for high solid content waste like manure, using a simple, long, horizontal tank.</li>
-            <li><strong>Complete Mix:</strong> Provides uniform digestion by continuously mixing waste inside a tank.</li>
-        </ul>
-
-            <h3>Contact Us</h3>
-            <p>If you have any questions or would like more information about our services, feel free to contact us at:</p>
-            <p>Email: <a href="GreenEnergy.com">info@GreenEnergy.com</a></p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 GreenEnergy. All rights reserved.</p>
-            <a>Back to Home</a> |
-            <a>Terms and Conditions</a>
-        </div>
-    </footer>
-
+    </div>
     <div class="container" x-data="app()">
         <!-- Terms and Conditions Section -->
         <!-- <template x-if="showTerms">
@@ -84,157 +41,136 @@
 
         <!-- Biogas Inputs Form -->
         <!-- <template x-if="showBiogasInputs"> -->
-            <div>
-
-            </div>
-
-
-
-            <div>
-                <!-- <h2>Biogas Inputs</h2> -->
-
-                <!--features table-->
-                <body x-data="{ showTable: false }">
-
-                    
-                    <a href="#" @click.prevent="showTable = !showTable">
-                        <img src="table.jpeg" width="80px" alt="Comparison table" @click="selectTable" :class="{'selected': selectedTable === 'table'}" >
-                        
-                    </a>
-                
-                    <div x-show="showTable" x-transition>
-                        <table>
-                            <thead>
-                                <tr class="text_1">
-                                    <th >Features</th>
-                                    <th>Covered Lagoon</th>
-                                    <th>Mixed Plug Flow</th>
-                                    <th>Horizontal Plug Flow</th>
-                                    <th>Complete mix</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text_1"><b>Continuous or Batch</b></td>
-                                    <td class="text_2">Continuous</td>
-                                    <td class="text_3">Both</td>
-                                    <td class="text_2">Continuous</td>
-                                    <td class="text_3">Continuous</td>
-                                </tr>
-                                
-                                <tr>
-                                   <td class="text_1"> <b>Retention Time (days)</b></td>
-                                    <td class="text_3">15-30</td>
-                                    <td class="text_2">15-20</td>
-                                    <td class="text_3">15-20</td>
-                                    <td class="text_2">20-30</td>
-                                </tr>
-                                <tr>
-                                    <td class="text_1"><b>Operating Temperature(°C)</b></td>
-                                    <td class="text_2">Thermophilic (50-65)</td>
-                                    <td class="text_3">Mesophilic (25-40)</td>
-                                    <td class="text_2">Mesophilic(30-40)</td>
-                                    <td class="text_3">Mesophilic(30-40)</td>
-                                </tr>
-                                <tr>
-                                    
-                                <tr>
-                                    <td class="text_1"> <b>Maintenance Cost</b> </td>
-                                    <td class="text_3">Low: low costs to build and operate.</td>
-                                    <td class="text_2">High: due to need for specialized equipment and control systems.</td>
-                                    <td class="text_3">Moderate: regular maintenance required for long-term performance.</td>
-                                    <td class="text_2">Moderate: regular maintenance required for long-term performance.</td>
-                                </tr>
-                                
-                                <tr>
-                                    <td class="text_1"><b>Energy Efficiency</b></td>
-                                    <td class="text_2">Moderate to Low</td>
-                                    <td class="text_3">High</td>
-                                    <td class="text_2">High</td>
-                                    <td class="text_3">Moderate</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                <h2>Biogas Inputs</h2> 
-
-                <form @submit.prevent="submitForm">
-                    <div>
-                  <h3><label for="digester"><b>Type of Digester:</b></label></h3>
-                  <p class="input"><i>Please select your desired digester type</i></p>
+            
+            <form @submit.prevent="submitForm">
+                <div>
+                    <h3><label for="digester"><b>Type of Digester:</b></label></h3>
+                    <p class="input"><i>Please select your desired digester type</i></p>
                 </div>
-                    <div class="digester-options">
 
-                       <div class="digester-item">
-                        <img src="Covered_lagoon.jpg" alt="Covered Lagoon" @click="selectDigester('Covered Lagoon')" :class="{'selected': selectedDigester === 'Covered Lagoon'}">
-                        <p>Covered Lagoon</p>
-                        <template x-if="selectedDigester === 'Covered Lagoon'">
-                            <div>
+            <div class="digester-options">
+                <div class="digester-item">
+                    <img src="Covered_lagoon.jpg" alt="Covered Lagoon" @click="selectDigester('Covered Lagoon')" :class="{'selected': selectedDigester === 'Covered Lagoon'}">
+                    <p>Covered Lagoon</p>
+                    <template x-if="selectedDigester === 'Covered Lagoon'">
+                        <div>
                             <p class="description">The Covered Lagoon digester is a simple, low-cost method that captures methane from waste material by trapping the gas under a covered lagoon.</p>
-                                <p class="adv"><i>Advantage:</i> Low cost to build and operate.</p>
-                               <p class="disadv"><i> Disadvantage:</i> Seasonal changes have an impact on the amount of biogas produced.</p>
+                            <p class="adv"><i>Advantage:</i> Low cost to build and operate.</p>
+                            <p class="disadv"><i>Disadvantage:</i> Seasonal changes have an impact on the amount of biogas produced.</p>
+                            <button @click.prevent="showTable = true">Compare</button> <!-- Compare button -->
+                        </div>
+                    </template>
+                </div>
         
+                <div class="digester-item">
+                    <img src="complete_mix.jpg" alt="Complete Mix" @click="selectDigester('Complete Mix')" :class="{'selected': selectedDigester === 'Complete Mix'}">
+                    <p>Complete Mix</p>
+                    <template x-if="selectedDigester === 'Complete Mix'">
+                        <div>
+                            <p class="description">Complete Mix digesters are fully enclosed systems that use mechanical mixing to ensure that organic material is evenly distributed for maximum gas production.</p>
+                            <p class="adv"><i>Advantage:</i> Suitable for large-scale operations, such as agricultural activities.</p>
+                            <p class="disadv"><i>Disadvantage:</i> Continuous mixing consumes a large amount of energy.</p>
+                            <button @click.prevent="showTable = true">Compare</button> <!-- Compare button -->
                         </div>
-                        </template>
-                    </div>
-
-                        <div class="digester-item">
-                            <img src="complete_mix.jpg" alt="Complete Mix" @click="selectDigester('Complete Mix')" :class="{'selected': selectedDigester === 'Complete Mix'}">
-                            <p>Complete Mix</p>
-                            <template x-if="selectedDigester === 'Complete Mix'">
-                                <div>
-                                <p class="description">Complete Mix digesters are fully enclosed systems that use mechanical mixing to ensure that organic material is evenly distributed for maximum gas production.</p>
-                                    <p class="adv"><i>Advantage:</i> Suitable for large-scale operations, such as agricultural activities.</p>
-                                    <p class="disadv"><i>Disadvantage:</i> Continuous mixing consumes a large amount of energy.</p>
-                                
-                            </div>
-                            </template>
+                    </template>
+                </div>
+        
+                <div class="digester-item">
+                    <img src="mixed_plug_flow.jpg" alt="Mixed Plug Flow" @click="selectDigester('Mixed Plug Flow')" :class="{'selected': selectedDigester === 'Mixed Plug Flow'}">
+                    <p>Mixed Plug Flow</p>
+                    <template x-if="selectedDigester === 'Mixed Plug Flow'">
+                        <div>
+                            <p class="description">The Mixed Plug Flow digester moves waste through the system in a plug-like motion, creating efficient gas production from high-solids waste.</p>
+                            <p class="adv"><i>Advantage:</i> Lower water requirement and high tolerance to impurities and inhibitors.</p>
+                            <p class="disadv"><i>Disadvantage:</i> More complex to design and operate compared to simple plug flow and complete mix digesters.</p>
+                            <button @click.prevent="showTable = true">Compare</button> <!-- Compare button -->
                         </div>
-
-                        <div class="digester-item">
-                            <img src="mixed_plug_flow.jpg" alt="Mixed Plug Flow" @click="selectDigester('Mixed Plug Flow')" :class="{'selected': selectedDigester === 'Mixed Plug Flow'}">
-                            <p>Mixed Plug Flow</p>
-                            <template x-if="selectedDigester === 'Mixed Plug Flow'">
-                                <div>
-                                <p class="description">The Mixed Plug Flow digester moves waste through the system in a plug-like motion, creating efficient gas production from high-solids waste.</p>
-                                    <p class="adv"><i>Advantage:</i> Lower water requirement and high tolerance to impurities and inhibitors.</p>
-                                    <p class="disadv"><i>Disadvantage:</i> More complex to design and operate compared to simple plug flow and complete mix digesters.</p>
-                               </div>
-                            </template>
+                    </template>
+                </div>
+        
+                <div class="digester-item">
+                    <img src="Plugflow_digester1.jpg" alt="Horizontal Plug Flow" @click="selectDigester('Horizontal Plug Flow')" :class="{'selected': selectedDigester === 'Horizontal Plug Flow'}">
+                    <p>Horizontal Plug Flow</p>
+                    <template x-if="selectedDigester === 'Horizontal Plug Flow'">
+                        <div>
+                            <p class="description">The Horizontal Plug Flow digester is designed to handle higher solid waste content and uses a horizontal flow for processing the waste material.</p>
+                            <p class="adv"><i>Advantage:</i> Horizontal design ensures constant anaerobic digestion process thus optimizing biogas output.</p>
+                            <p class="disadv"><i>Disadvantage:</i> Minimal mixing may inhibit uniform digestion and biogas output.</p>
+                            <button @click.prevent="showTable = true">Compare</button> <!-- Compare button -->
                         </div>
-
-                        <div class="digester-item">
-                            <img src="Plugflow_digester1.jpg" alt="Horizontal Plug Flow" @click="selectDigester('Horizontal Plug Flow')" :class="{'selected': selectedDigester === 'Horizontal Plug Flow'}">
-                            <p>Horizontal Plug Flow</p>
-                            <template x-if="selectedDigester === 'Horizontal Plug Flow'">
-                                <div>
-                                    <p class="description">The Horizontal Plug Flow digester is designed to handle higher solid waste content and uses a horizontal flow for processing the waste material.</p>
-                                    <p class="adv"><i>Advantage:</i> Horizontal design ensures constant anaerobic digestion process thus optimising biogas output.</p>
-                                    <p class="disadv"><i>Disadvantage:</i> Minimal mixing may inhibit uniform digestion and biogas output.</p>
-                                </div>
-                            </template>
-                        </div>
-                        
-                    </div>
-                    <br><br>
-
-                   <h3><b><label for="wasteVolume">Volume of Waste (kg):</label></b></h3>
-                   <p class="input"><i>Please enter your volume of waste</i></p>
-                    <input type="number" id="wasteVolume" x-model="wasteVolume" placeholder="Waste in kg" step="0.01">
-                   
-                    <br><br>
-
-                    <button type="submit" class="button">Submit</button>
-                </form>
-                 
-                
-                <template x-if="showMessage">
-                    <!-- <p>Thank you for submitting your biogas inputs!</p> -->
-                    <p>Predicted Biogas Output: <strong x-text="predictionResult"></strong> cubic meters</p>
-                </template>
+                    </template>
+                </div>
             </div>
-        </template>
+        
+            <!-- Comparison Table Section -->
+            <div x-show="showTable" x-transition>
+                <h2>Digester Comparison Table</h2>
+                <table>
+                    <thead>
+                        <tr class="text_1">
+                            <th>Features</th>
+                            <th>Covered Lagoon</th>
+                            <th>Mixed Plug Flow</th>
+                            <th>Horizontal Plug Flow</th>
+                            <th>Complete Mix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text_1"><b>Continuous or Batch</b></td>
+                            <td class="text_2">Continuous</td>
+                            <td class="text_3">Both</td>
+                            <td class="text_2">Continuous</td>
+                            <td class="text_3">Continuous</td>
+                        </tr>
+                        <tr>
+                           <td class="text_1"> <b>Retention Time (days)</b></td>
+                            <td class="text_3">15-30</td>
+                            <td class="text_2">15-20</td>
+                            <td class="text_3">15-20</td>
+                            <td class="text_2">20-30</td>
+                        </tr>
+                        <tr>
+                            <td class="text_1"><b>Operating Temperature(°C)</b></td>
+                            <td class="text_2">Thermophilic (50-65)</td>
+                            <td class="text_3">Mesophilic (25-40)</td>
+                            <td class="text_2">Mesophilic (30-40)</td>
+                            <td class="text_3">Mesophilic (30-40)</td>
+                        </tr>
+                        <tr>
+                            <td class="text_1"> <b>Maintenance Cost</b> </td>
+                            <td class="text_3">Low: low costs to build and operate.</td>
+                            <td class="text_2">High: due to need for specialized equipment and control systems.</td>
+                            <td class="text_3">Moderate: regular maintenance required for long-term performance.</td>
+                            <td class="text_2">Moderate: regular maintenance required for long-term performance.</td>
+                        </tr>
+                        <tr>
+                            <td class="text_1"><b>Energy Efficiency</b></td>
+                            <td class="text_2">Moderate to Low</td>
+                            <td class="text_3">High</td>
+                            <td class="text_2">High</td>
+                            <td class="text_3">Moderate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+           
+                <br><br>
+        
+                <h3><b><label for="wasteVolume">Volume of Waste (kg):</label></b></h3>
+                <p class="input"><i>Please enter your volume of waste</i></p>
+                <input type="number" id="wasteVolume" x-model="wasteVolume" placeholder="Waste in kg" step="0.01">
+                <br><br>
+        
+                <button type="submit" class="button">Submit</button>
+            </form>
+        
+            <template x-if="showMessage">
+                <p>Predicted Biogas Output: <strong x-text="predictionResult"></strong> cubic meters</p>
+            </template>
+        </div>
+       
     </div>
     
 
