@@ -14,64 +14,82 @@ document.addEventListener("alpine:init", () => {
             
             // Use $nextTick to ensure the DOM is updated before attempting to access the canvas
             this.$nextTick(() => {
-                if (this.history.length > 0) {
-                    this.renderChart();
+                const ctx = document.getElementById('historyChart').getContext('2d');
+                if (ctx) {
+                    this.renderChart(ctx);
+                } else {
+                    console.error("Canvas context not found");
                 }
             });
         },
 
         renderChart() {
-            // Use a delay to ensure the canvas is rendered before initializing the chart
             setTimeout(() => {
-                const ctx = document.getElementById('historyChart')?.getContext('2d');
-                if (!ctx) {
-                    console.error("Canvas context not found");
-                    return;
-                }
-        
-                // Extract data for the chart
-                const labels = this.history.map(entry => entry.date);
-                const data = this.history.map(entry => entry.output);
-        
-                // Destroy existing chart if any
-                if (this.chart) {
-                    this.chart.destroy();
-                }
-        
-                // Create the bar chart
+              const canvas = document.getElementById('historyChart');
+              const ctx = canvas?.getContext('2d');
+          
+              if (!ctx) {
+                console.error("Canvas context not found");
+                return;
+              }
+          
+              canvas.style.display = '';
+          
+              const labels = this.history.map(entry => entry.date);
+              const data = this.history.map(entry => parseFloat(entry.output));
+          
+              console.log('Creating chart with labels:', labels);
+              console.log('Data:', data);
+          
+              if (data.length === 0 || data.every(isNaN)) {
+                console.error("No valid data for chart");
+                return;
+              }
+          
+              if (this.chart) {
+                this.chart.destroy(); // Destroy previous chart instance
+              }
+          
+              try {
                 this.chart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Predicted Biogas Output (m³)',
-                            data: data,
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Light green with transparency
-                            borderColor: 'rgba(75, 192, 192, 1)', // Solid green
-                            borderWidth: 1 // Thickness of the border
-                        }],
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Date'
-                                }
-                            },
-                            y: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: 'Predicted Output (m³)'
-                                }
-                            }
+                  type: 'bar',
+                  data: {
+                    labels: labels,
+                    datasets: [{
+                      label: 'Predicted Biogas Output (m³)',
+                      data: data,
+                      backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                      borderColor: 'rgba(75, 192, 192, 1)',
+                      borderWidth: 2
+                    }]
+                  },
+                  options: {
+                    responsive: true,
+                    scales: {
+                      x: {
+                        title: {
+                          display: true,
+                          text: 'Date'
                         }
+                      },
+                      y: {
+                        beginAtZero: true,
+                        title: {
+                          display: true,
+                          text: 'Predicted Output (m³)'
+                        }
+                      }
                     }
+                  }
                 });
-            }, 100); // Adjust the delay as needed
+          
+                console.log('Chart created successfully', this.chart);
+              } catch (error) {
+                console.error("Error creating chart:", error);
+              }
+            }, 100);
         },
+        
 
         clearHistory() {
             // Clear the history and remove from localStorage
