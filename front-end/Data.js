@@ -46,9 +46,9 @@ document.addEventListener("alpine:init", () => {
                 return;
               }
           
-              if (this.chart) {
-                this.chart.destroy(); // Destroy previous chart instance
-              }
+              // if (this.chart) {
+              //   this.chart.destroy(); // Destroy previous chart instance
+              // }
           
               try {
                 this.chart = new Chart(ctx, {
@@ -70,7 +70,9 @@ document.addEventListener("alpine:init", () => {
                         title: {
                           display: true,
                           text: 'Date'
-                        }
+                        },
+                        barPercentage: 0.5,  // Adjust the width of the bars (0 to 1 scale)
+                        categoryPercentage: 0.5 // Adjust space between bars (0 to 1 scale)
                       },
                       y: {
                         beginAtZero: true,
