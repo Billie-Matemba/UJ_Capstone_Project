@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History</title>
+      <script src="Data.js"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+   
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body x-data="app()" x-init="init()">
+    <div class="container">
+    
+        <template x-if="history.length > 0">
+            <div>
+                <h2> Your Biogas Prediction History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Digester Type</th>
+                            <th>Waste Volume (kg)</th>
+                            <th>Predicted Output (m³)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template x-for="entry in history" :key="entry.date">
+                            <tr>
+                                <td x-text="entry.date"></td>
+                                <td x-text="entry.digester"></td>
+                                <td x-text="entry.wasteVolume"></td>
+                                <td x-text="entry.output"></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+                <!-- Keep the canvas here, outside the conditional block -->
+                <canvas id="historyChart" width="400" height="200" style="display: none;"></canvas>
+                <button @click="clearHistory">Clear History</button>
+            </div>
+        </template>
+        
+        <template x-if="history.length === 0">
+            <p>No history available.</p>
+        </template>
+        
+        <div><a href="index.html" class="input"><i>Back to input page</i></a></div>
+        
+    </div>
+</div>
+</body>
