@@ -9,13 +9,17 @@ import io
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./front-end')
 CORS(app)  
 model = load_model('trained_model.keras')
 
 # Load the LabelEncoder used during model training
 le = LabelEncoder()
 le.fit(['Covered Lagoon', 'Complete Mix', 'Mixed Plug Flow', 'Horizontal Plug Flow'])  
+
+@app.route('/', methods=['GET'])
+def home():
+    return app.send_static_file('index.html')
 
 @app.route('/api/ml/predict', methods=['POST'])
 def predict():
@@ -36,3 +40,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')
+    print('')
