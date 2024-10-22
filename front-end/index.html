@@ -7,15 +7,15 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="Data.js"></script>
+    <link rel="stylesheet" href="/front-end/style.css">
+    <script src="/front-end/Data.js"></script>
 </head>
 <body>
     <div class="header">
         <!-- <a href="index.html">Home</a> -->
-        <a href="about.html">About</a>
-        <a href="reco.html">More info</a>
-        <a href="history.html" class="input">Analysis Tools</a>
+        <a href="/front-end/about.html">About</a>
+        <a href="/front-end/reco.html">More info</a>
+        <a href="/front-end/history.html" class="input">Analysis Tools</a>
     </div>
     <div class="container" x-data="app()">
         <!-- Terms and Conditions Section -->
@@ -50,7 +50,7 @@
 
             <div class="digester-options">
                 <div class="digester-item">
-                    <img src="Covered_lagoon.jpg" alt="Covered Lagoon" @click="selectDigester('Covered Lagoon')" :class="{'selected': selectedDigester === 'Covered Lagoon'}">
+                    <img src="/front-end/Covered_lagoon.jpg" alt="Covered Lagoon" @click="selectDigester('Covered Lagoon')" :class="{'selected': selectedDigester === 'Covered Lagoon'}">
                     <p>Covered Lagoon</p>
                     <template x-if="selectedDigester === 'Covered Lagoon'">
                         <div>
@@ -63,7 +63,7 @@
                 </div>
         
                 <div class="digester-item">
-                    <img src="complete_mix.jpg" alt="Complete Mix" @click="selectDigester('Complete Mix')" :class="{'selected': selectedDigester === 'Complete Mix'}">
+                    <img src="/front-end/complete_mix.jpg" alt="Complete Mix" @click="selectDigester('Complete Mix')" :class="{'selected': selectedDigester === 'Complete Mix'}">
                     <p>Complete Mix</p>
                     <template x-if="selectedDigester === 'Complete Mix'">
                         <div>
@@ -76,7 +76,7 @@
                 </div>
         
                 <div class="digester-item">
-                    <img src="mixed_plug_flow.jpg" alt="Mixed Plug Flow" @click="selectDigester('Mixed Plug Flow')" :class="{'selected': selectedDigester === 'Mixed Plug Flow'}">
+                    <img src="/front-end/mixed_plug_flow.jpg" alt="Mixed Plug Flow" @click="selectDigester('Mixed Plug Flow')" :class="{'selected': selectedDigester === 'Mixed Plug Flow'}">
                     <p>Mixed Plug Flow</p>
                     <template x-if="selectedDigester === 'Mixed Plug Flow'">
                         <div>
@@ -89,7 +89,7 @@
                 </div>
         
                 <div class="digester-item">
-                    <img src="Plugflow_digester1.jpg" alt="Horizontal Plug Flow" @click="selectDigester('Horizontal Plug Flow')" :class="{'selected': selectedDigester === 'Horizontal Plug Flow'}">
+                    <img src="/front-end/Plugflow_digester1.jpg" alt="Horizontal Plug Flow" @click="selectDigester('Horizontal Plug Flow')" :class="{'selected': selectedDigester === 'Horizontal Plug Flow'}">
                     <p>Horizontal Plug Flow</p>
                     <template x-if="selectedDigester === 'Horizontal Plug Flow'">
                         <div>
