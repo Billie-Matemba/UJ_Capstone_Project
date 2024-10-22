@@ -2,6 +2,6 @@ pandas
 numpy
 matplotlib
 scikit-learn
-tensorflow
+tensorflow-cpu
 Flask
 flask_cors
