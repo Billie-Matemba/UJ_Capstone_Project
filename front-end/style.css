@@ -1,0 +1,409 @@
+/* Background and body settings */
+body {
+    background-image: url('backround.jpeg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+/* Header Navigation */
+.header {
+    background-color:#2c7a7b; 
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for the header */
+    position: sticky; /* Sticks to the top when scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+.header a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header a:hover {
+    background-color: #16a085;
+    color: #fff;
+    border-radius: 5px; /* Rounded corners for hover effect */
+}
+
+
+/* Main container */
+.container {
+    /* max-width: 900px; */
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    border-radius: 12px; /* Increased radius for smoother corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Glass effect for modern look */
+}
+
+/* Header styling */
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #2c7a7b; /* Updated to nature-inspired color */
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Text and paragraph styling */
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Terms list styling */
+.terms-list {
+    list-style-type: disc;
+    margin: 0;
+    padding: 0;
+    text-align: left; /* Left-align list */
+    width: 100%;
+    max-width: 600px;
+    margin-top: 0;
+    color: #333;
+}
+
+.terms-list li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Button group */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button {
+    background-color: #2c7a7b; /* Changed to more modern color */
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px; /* Increased radius for smoother buttons */
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s ease; /* Added subtle hover effects */
+}
+
+.button-group button:hover {
+    background-color: #285e61; /* Slightly darker on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Continue button */
+.continue {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.continue:disabled {
+    background-color: #c4c4c4;
+    cursor: not-allowed;
+}
+
+.continue:hover:not(:disabled) {
+    background-color: #1e7e34;
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+/* Input fields */
+select, input {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #2c7a7b; /* Highlight border on focus */
+    box-shadow: 0 0 10px rgba(44, 122, 123, 0.2);
+}
+
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button-group button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .button-group button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/* Digester options styling */
+.digester-options {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.digester-item {
+    text-align: center;
+}
+
+.digester-item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.digester-item img:hover {
+    transform: scale(1.1);
+    border-color: #2c7a7b;
+}
+
+/* Style for selected digester image */
+.digester-item img.selected {
+    border-color: #2c7a7b;
+    box-shadow: 0 0 10px rgba(44, 122, 123, 0.5);
+}
+
+.digester-item p {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.digester-item .description {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
+
+ .digester-item .adv{
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #399739;
+    text-align: center; 
+}
+
+.digester-item .disadv{
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #2f5eb6;
+    text-align: center; 
+}
+
+.input{
+    font-size: 0.7em;
+    color:#2c7a7b
+}
+
+.button{
+    color: #0d0e0d;
+    background-color: #28a745;
+    cursor:pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    size: 0.7em;
+}
+
+.button:hover {
+    background-color: #21c9ad; /* Darker shade of green */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+ /*table styling*/
+ table {
+    padding: 0.2em;
+    border: 1px solid;
+    border-style: ridge;
+}
+
+th, td {
+    border: 1px solid;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.text_1 {
+    color: #042c0e;
+}
+
+
+
+/* Hover effect for table cells */
+th:hover, td:hover {
+    background-color: #9ee99e; /* Change to your desired hover color */
+}
+
+.text_2{
+    background-color: #b2ecc4;
+}
+
+.text_3{
+    background-color: #8ec99c;
+}
+
+.table_img{
+    width: 10px;
+    height:auto;
+}
+
+.hidden {
+    display: none; /* Class to hide sections */
+}
+
+/*style for recommended page/*
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+header {
+    background-color:#1abc9c;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 3px solid #16a085;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+/* Video Section */
+.video-section {
+    background-color: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the videos */
+    gap: 20px; /* Space between cards */
+}
+
+.video-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 1 calc(50% - 20px); /* Two videos per row with gap */
+    max-width: 300px; /* Optional max-width */
+}
+
+.video-card p {
+    margin: 5px 0;
+    color: #2c3e50;
+}
+
+/* Articles & Links Section */
+.articles-section, .links-section {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.article-card, .links-section ul {
+    margin: 10px auto;
+    max-width: 320px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.links-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #1abc9c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+} 
+
+ /* Add this style for the weather forecast */
+ .forecast-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forecast-container li {
+    list-style: none; /* Remove default list styling */
+    padding: 10px;
+    border: 1px solid #ddd; /* Optional: To visually separate items */
+    margin-right: 10px; /* Space between items */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+}
+
+.forecast-container img {
+    margin-bottom: 5px;
+    width: 80px /* Adjusted icon width */
+     /* Adjusted icon height */
+}
+
+
+
+/* Adjust table style if needed */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
