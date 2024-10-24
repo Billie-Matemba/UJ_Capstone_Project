@@ -407,3 +407,20 @@ th, td {
     padding: 8px;
     text-align: left;
 }
+
+ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    margin: 10px 0; /* Space between list items */
+    padding: 10px; /* Padding around each item */
+    background: #ecf0f1; /* Light background for items */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+strong {
+    color: #2980b9; /* Color for strong text */
+}
