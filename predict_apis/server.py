@@ -10,7 +10,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
 
 
 app = Flask(__name__, static_folder='./front-end')
-CORS(app)  
+CORS(app, origins=["https://greenapp-gxvw.onrender.com"])
 model = load_model('trained_model.keras')
 
 # Load the LabelEncoder used during model training
