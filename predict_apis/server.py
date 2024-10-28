@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 import sys
 import io
+import os
 
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
 
@@ -39,5 +40,5 @@ def predict():
     return jsonify(prediction)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000, host='0.0.0.0')
-    print('')
+    port = int(os.environ.get("PORT", 5000)) 
+    app.run(debug=True, port=port, host='0.0.0.0')
