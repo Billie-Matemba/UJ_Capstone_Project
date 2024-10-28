@@ -153,26 +153,75 @@ select:focus, input:focus {
 
 
 
-/* Responsive styling */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .digester-options,
+    .video-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 
-    .button-group {
-        flex-direction: column;
-        width: 100%;
+    .digester-item, .video-card {
+        flex: 1 1 calc(50% - 20px);
+        max-width: 250px;
     }
 
-    .button-group button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .button-group button:last-child {
-        margin-bottom: 0;
+    .input-form input, .input-form .button {
+        width: 90%;
+        margin: 0 auto;
     }
 }
+
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .header a {
+        margin: 5px 0;
+    }
+
+    .digester-options,
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .digester-item, .video-card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .input-form input, .input-form .button {
+        width: 100%;
+    }
+
+    .forecast-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h2, p {
+        font-size: 1em;
+    }
+
+    .digester-item img, .video-card video {
+        width: 100%;
+        height: auto;
+    }
+
+    .header {
+        padding: 5px 0;
+    }
+}
+
 
 
 /* Digester options styling */
