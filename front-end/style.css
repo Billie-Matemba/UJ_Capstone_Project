@@ -161,6 +161,7 @@ select:focus, input:focus {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
+        
     }
 
     .digester-item, .video-card {
@@ -189,6 +190,7 @@ select:focus, input:focus {
     .video-container {
         flex-direction: column;
         align-items: center;
+        
     }
 
     .digester-item, .video-card {
@@ -221,7 +223,63 @@ select:focus, input:focus {
         padding: 5px 0;
     }
 }
+.container {
+    padding: 20px; /* Add some padding around the container */
+    
+}
 
+table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Collapse borders for better appearance */
+}
+
+th, td {
+    padding: 12px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Border for rows */
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.table-responsive {
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+}
+
+/* Additional styles for mobile devices */
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px; /* Adjust padding for smaller screens */
+        font-size: 11.5px; /* Reduce font size for smaller screens */
+    }
+}
+
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Set a fixed height or use a percentage for dynamic sizing */
+    
+}
+
+#historyChart {
+    width: 100% !important; /* Ensure the chart takes full width */
+    height: 100% !important; /* Ensure the chart takes full height */
+    
+}
+
+.card {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    margin: 20px 0; /* Spacing between cards */
+}
 
 
 /* Digester options styling */
@@ -229,7 +287,9 @@ select:focus, input:focus {
     display: flex;
     justify-content: space-around;
     gap: 20px;
+    
 }
+
 
 .digester-item {
     text-align: center;
@@ -472,4 +532,17 @@ li {
 
 strong {
     color: #2980b9; /* Color for strong text */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px; /* Adjust padding for smaller screens */
+        font-size: 8.7px; /* Reduce font size for smaller screens */
+    }
+
+    
+
+
 }
