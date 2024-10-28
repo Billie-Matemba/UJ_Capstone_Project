@@ -19,6 +19,7 @@
       </header>
         <section class="video-section">
           <h2>Recommended Videos</h2>
+          <h3>General Information</h3>
           <div class="video-container">
               <!-- Video 1 -->
               <div class="video-card">
@@ -63,13 +64,84 @@
                       <p>Anaerobic Digestion Technologies and Operation</p>
                   </div>
               </div>
+              <!-- Video 5 -->
+              <div class="video-card">
+                <div @click="loadVideo5 = true" x-show="!loadVideo5">
+                    <!-- Placeholder thumbnail or play button -->
+                </div>
+                <div x-show="loadVideo5" x-cloak>
+                    <iframe width="300" height="200" src="https://www.youtube.com/embed/OVclKRemXDs" title="Benefits of Biogas generation in SA" allowfullscreen></iframe>
+                    <p>Benefits of Biogas generation in South Africa</p>
+                </div>
+            </div>
+            <div class="video-card">
+              <div @click="loadVideo5 = true" x-show="!loadVideo5">
+                  <!-- Placeholder thumbnail or play button -->
+              </div>
+              <div x-show="loadVideo5" x-cloak>
+                  <iframe width="300" height="200" src="https://www.youtube.com/embed/61OLcrKtdNU" title="Biogas generation in SA" allowfullscreen></iframe>
+                  <p>Biogas as alternative energy source in South Africa</p>
+              </div>
           </div>
-      </section>
+          
+        </div>
+      </div>
+</section>
       
+<section class="video-section" id="optimize-biogas">
+  <h3>How to optimise biogas production</h3>
+  <div class="video-container">
+    <div class="video-card">
+      <div @click="loadVideo6 = true" x-show="!loadVideo6">
+          <!-- Placeholder thumbnail or play button -->
+      </div>
+      <div x-show="loadVideo6" x-cloak>
+          <iframe width="300" height="200" src="https://www.youtube.com/embed/seK4U5qW6fM" title="Biogas generation in SA" allowfullscreen></iframe>
+          <p>Water gas heaters for biogas optimisation</p>
+      </div>
+  </div>
+  <div class="video-card">
+    <div @click="loadVideo7 = true" x-show="!loadVideo7">
+        <!-- Placeholder thumbnail or play button -->
+    </div>
+    <div x-show="loadVideo7" x-cloak>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/vBjlmEn704k" title="Biogas generation in SA" allowfullscreen></iframe>
+        <p>Steam heaters for biogas optimisation</p>
+    </div>
+</div>
+<div class="video-card">
+  <div @click="loadVideo8 = true" x-show="!loadVideo8">
+      <!-- Placeholder thumbnail or play button -->
+  </div>
+  <div x-show="loadVideo8" x-cloak>
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/xGl_OrUI9mk" title="Biogas generation in SA" allowfullscreen></iframe>
+      <p>Mixing different feedstocks</p>
+  </div>
+</div>
+<div class="video-card">
+  <div @click="loadVideo9 = true" x-show="!loadVideo9">
+      <!-- Placeholder thumbnail or play button -->
+  </div>
+  <div x-show="loadVideo9" x-cloak>
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/9PMib17CTmQ" title="Biogas generation in SA" allowfullscreen></iframe>
+      <p>Hydrolysis enhancement in optimising biogas generation</p>
+  </div>
+</div>
+<div class="video-card">
+  <div @click="loadVideo9 = true" x-show="!loadVideo9">
+      <!-- Placeholder thumbnail or play button -->
+  </div>
+  <div x-show="loadVideo9" x-cloak>
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/M5RbjWOHt_w" title="Biogas generation in SA" allowfullscreen></iframe>
+      <p>pH Adjustment</p>
+  </div>
+</div>
+  </div>
+  </section>
+
 
     
   
-      </section>
     
       <main>
         <section class="articles-section">
