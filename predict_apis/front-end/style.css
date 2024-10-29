@@ -540,9 +540,27 @@ strong {
     th, td {
         padding: 8px; /* Adjust padding for smaller screens */
         font-size: 8.7px; /* Reduce font size for smaller screens */
+
+       
     }
 
-    
 
+}
 
+/* sign in styles */
+.auth-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
