@@ -178,7 +178,7 @@ document.addEventListener("alpine:init", () => {
       submitForm() {
           if (this.selectedDigester && this.wasteVolume) {
               // Call the API to get the biogas prediction
-              axios.post('https://uj-capstone-project-3.onrender.com/api/ml/predict', {
+              axios.post('/api/ml/predict', {
                   digester_type: this.selectedDigester,
                   total_waste: this.wasteVolume
               }, {
