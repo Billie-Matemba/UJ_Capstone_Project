@@ -40,5 +40,5 @@ def predict():
     return jsonify(prediction)
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Use the environment PORT
-    app.run(port=port, host='0.0.0.0')        # Debug mode off for production
+    app.run(debug=True, port=5000, host='0.0.0.0')
+    print('')     

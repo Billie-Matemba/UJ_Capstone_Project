@@ -8,6 +8,14 @@ document.addEventListener("alpine:init", () => {
       history: [],
       chart: null,
       forecast: [], // To store the forecast data including icons
+      isSignUp: false,
+      isLoggedIn: !!localStorage.getItem('loggedInUser'),
+      signUpUsername: '',
+      signUpPassword: '',
+      signInUsername: '',
+      signInPassword: '',
+      signUpError: '',
+      signInError: '',
 
       init() {
           // Load the prediction history from localStorage
@@ -125,17 +133,39 @@ document.addEventListener("alpine:init", () => {
           }, 100);
       },
       
+       // Toggle between sign-up and sign-in
+       toggleAuth() {
+        this.isSignUp = !this.isSignUp;
+        this.signUpError = '';
+        this.signInError = '';
+    },
 
-      clearHistory() {
-          // Clear the history and remove from localStorage
-          this.history = [];
-          localStorage.removeItem('biogasHistory');
+    // Sign Up logic
+    signUp() {
+        if (localStorage.getItem(this.signUpUsername)) {
+            this.signUpError = "Username already exists.";
+        } else {
+            localStorage.setItem(this.signUpUsername, JSON.stringify({
+                password: this.signUpPassword,
+                history: []
+            }));
+            this.signUpError = '';
+            alert("Sign-up successful! Please sign in.");
+            this.toggleAuth(); // Switch to Sign In after successful sign-up
+        }
+    },
 
-          // Clear the chart if it exists
-          if (this.chart) {
-              this.chart.destroy();
-          }
-      },
+    // Sign In logic
+    signIn() {
+        const userData = JSON.parse(localStorage.getItem(this.signInUsername));
+        if (userData && userData.password === this.signInPassword) {
+            localStorage.setItem('loggedInUser', this.signInUsername);
+            this.isLoggedIn = true;
+            window.location.href = 'index.html'; // Redirect to index page
+        } else {
+            this.signInError = "Invalid username or password";
+        }
+    },
 
       // Select a digester and reset the table view
       selectDigester(digester) {
